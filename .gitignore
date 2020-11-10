@@ -1,0 +1,11 @@
+node_modules/
+.vscode/
+*.log
+bin/*
+deploy.config.php
+TODO
+.gradle
+*.keystore
+build.json
+*.sfk
+*.pem

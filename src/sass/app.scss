@@ -1,0 +1,173 @@
+$fa-font-path: "files" !default;
+
+@import "~animate.css/animate.css";
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+
+@import "~fontsource-exo/index.css";
+
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+body {
+    background: #fff;
+    color: #000;
+}
+
+#app {
+    width: 100vw;
+    height: 100vh;
+}
+
+.font-exo {
+    font-family: 'Exo', serif;
+}
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.vh {
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: .10s;
+  transition-property: opacity;
+  transition-timing-function: ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0
+}
+
+.slide-left-enter-active,
+.slide-left-leave-active,
+.slide-right-enter-active,
+.slide-right-leave-active {
+  transition-duration: .10s;
+  transition-property: height, opacity, transform;
+  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+  overflow: hidden;
+}
+
+.slide-left-enter,
+.slide-right-leave-active {
+  opacity: 0;
+  transform: translate(2em, 0);
+}
+
+.slide-left-leave-active,
+.slide-right-enter {
+  opacity: 0;
+  transform: translate(-2em, 0);
+}
+
+.slide-top-enter-active,
+.slide-top-leave-active,
+.slide-bottom-enter-active,
+.slide-bottom-leave-active {
+  transition-duration: .10s;
+  transition-property: height, opacity, transform;
+  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+  overflow: hidden;
+}
+
+.slide-top-enter,
+.slide-bottom-leave-active {
+  opacity: 0;
+  transform: translate(0, 2em);
+}
+
+.slide-top-leave-active,
+.slide-bottom-enter {
+  opacity: 0;
+  transform: translate(0, -2em);
+}
+
+.animate__fastest {
+    animation-duration: .15s;
+}
+
+.animate__fadeZoomIn {
+    -webkit-animation-name: fadeZoomIn;
+    animation-name: fadeZoomIn;
+}
+
+.animate__spinInLeft {
+    -webkit-animation-name: spinInLeft;
+    animation-name: spinInLeft;
+}
+
+@-webkit-keyframes fadeZoomIn {
+    from {
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3);
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+@keyframes fadeZoomIn {
+    from {
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3);
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes spinInLeft {
+    from {
+        -webkit-transform: translate3d(-100%, 0, 0) rotate(-180deg);
+        visibility: visible;
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+}
+
+@keyframes spinInLeft {
+    from {
+        transform: translate3d(-100%, 0, 0) rotate(-180deg);
+        visibility: visible;
+    }
+    to {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+}
+
+.bg-background-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: none;
+}
+
+.button-magenta {
+    color: #FFF;
+    background: #EE3399;
+
+    &:hover {
+        background: #F654AD;
+    }
+}
+
+.text-shadow {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
